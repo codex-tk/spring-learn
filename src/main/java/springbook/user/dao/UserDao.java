@@ -1,20 +1,18 @@
 package springbook.user.dao;
 
+import lombok.Data;
 import springbook.user.domain.User;
 
 import java.sql.*;
 
+@Data
 public class UserDao {
 
-    private Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("org.sqlite.JDBC");
-        Connection c = DriverManager.getConnection("jdbc:sqlite:./sample.db");
-        return c;
-    }
+    ConnectionMaker connectionMaker;
 
     public void add(User user) throws ClassNotFoundException , SQLException {
 
-        Connection c  = getConnection();
+        Connection c  = connectionMaker.makeNewConnection();
 
         PreparedStatement pstmt = c.prepareStatement(
                 "insert into users( id , name , password ) values( ? , ? , ?)");
@@ -29,7 +27,7 @@ public class UserDao {
     }
 
     public User get( String id ) throws ClassNotFoundException, SQLException {
-        Connection c  = getConnection();
+        Connection c  = connectionMaker.makeNewConnection();
 
         PreparedStatement pstmt = c.prepareStatement("select * from users where id = ?");
         pstmt.setString(1,id );
@@ -49,7 +47,7 @@ public class UserDao {
     }
 
     public void deleteAll() throws ClassNotFoundException, SQLException {
-        Connection c  = getConnection();
+        Connection c  = connectionMaker.makeNewConnection();
         c.createStatement().execute("delete from users");
         c.close();
     }

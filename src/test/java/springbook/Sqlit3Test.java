@@ -10,7 +10,7 @@ public class Sqlit3Test {
         try {
             Class.forName("org.sqlite.JDBC");
             DriverManager.getConnection("jdbc:sqlite:./sample.db").createStatement().execute(
-                    "create table users( id TEXT primary key , name TEXT , password TEXT )"
+                    "create table if not exists users( id TEXT primary key , name TEXT , password TEXT )"
             );
         } catch(Exception e) {
             e.printStackTrace();
