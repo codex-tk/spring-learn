@@ -5,9 +5,16 @@ import springbook.user.domain.User;
 import java.sql.*;
 
 public class UserDao {
-    public void add(User user) throws ClassNotFoundException , SQLException {
+
+    private Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         Connection c = DriverManager.getConnection("jdbc:sqlite:./sample.db");
+        return c;
+    }
+
+    public void add(User user) throws ClassNotFoundException , SQLException {
+
+        Connection c  = getConnection();
 
         PreparedStatement pstmt = c.prepareStatement(
                 "insert into users( id , name , password ) values( ? , ? , ?)");
@@ -22,8 +29,8 @@ public class UserDao {
     }
 
     public User get( String id ) throws ClassNotFoundException, SQLException {
-        Class.forName("org.sqlite.JDBC");
-        Connection c = DriverManager.getConnection("jdbc:sqlite:./sample.db");
+        Connection c  = getConnection();
+
         PreparedStatement pstmt = c.prepareStatement("select * from users where id = ?");
         pstmt.setString(1,id );
         ResultSet rs = pstmt.executeQuery();
@@ -42,8 +49,7 @@ public class UserDao {
     }
 
     public void deleteAll() throws ClassNotFoundException, SQLException {
-        Class.forName("org.sqlite.JDBC");
-        Connection c = DriverManager.getConnection("jdbc:sqlite:./sample.db");
+        Connection c  = getConnection();
         c.createStatement().execute("delete from users");
         c.close();
     }
