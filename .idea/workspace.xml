@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1776fd1d-edb0-4cb9-a28e-6577f3196e49" name="Default" comment=".">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/dao/ConnectionMaker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/dao/SimpleConnectionMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -141,8 +136,8 @@
       <file leaf-file-name="Sqlit3Test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+            <state relative-caret-position="522">
+              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1002,9 +997,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Sqlit3Test_open - 2017.11.02 at 00h 01m 18s.xml">
-      <configuration name="Sqlit3Test.open" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserDaoTest_add - 2017.11.02 at 00h 04m 07s.xml">
       <configuration name="UserDaoTest.add" configurationId="JUnit" />
     </history-entry>
@@ -1032,6 +1024,9 @@
     <history-entry file="springbook_in_spring_test - 2017.11.05 at 22h 28m 22s.xml">
       <configuration name="springbook in spring_test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="springbook_in_spring_test - 2017.11.05 at 22h 28m 58s.xml">
+      <configuration name="springbook in spring_test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="3222" height="1762" extended-state="6" />
@@ -1045,9 +1040,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32777423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777423" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25400898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25400898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1355,8 +1350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        <state relative-caret-position="522">
+          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
