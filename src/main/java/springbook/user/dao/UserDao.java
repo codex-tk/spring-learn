@@ -3,15 +3,16 @@ package springbook.user.dao;
 import lombok.Data;
 import springbook.user.domain.User;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
 @Data
 public class UserDao {
 
-    ConnectionMaker connectionMaker;
+    DataSource dataSource;
 
     public void add(User user) throws ClassNotFoundException , SQLException {
-        Connection c  = connectionMaker.makeNewConnection();
+        Connection c  = dataSource.getConnection();
 
         PreparedStatement pstmt = c.prepareStatement(
                 "insert into users( id , name , password ) values( ? , ? , ?)");
@@ -26,7 +27,7 @@ public class UserDao {
     }
 
     public User get( String id ) throws ClassNotFoundException, SQLException {
-        Connection c  = connectionMaker.makeNewConnection();
+        Connection c  = dataSource.getConnection();
 
         PreparedStatement pstmt = c.prepareStatement("select * from users where id = ?");
         pstmt.setString(1,id );
@@ -46,7 +47,7 @@ public class UserDao {
     }
 
     public void deleteAll() throws ClassNotFoundException, SQLException {
-        Connection c  = connectionMaker.makeNewConnection();
+        Connection c  = dataSource.getConnection();
         c.createStatement().execute("delete from users");
         c.close();
     }

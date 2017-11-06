@@ -34,12 +34,10 @@ public class UserDaoTest {
 
         User fromDao = dao.get("0");
         assertEquals(user,fromDao);
-        log.debug("Counter {}" , context.getBean("connectionMaker" , CountingConnectionMaker.class)
-                .getCounter());
     }
 
     @Test
-    public void equalTest(){
+    public void equalTest() throws SQLException, ClassNotFoundException {
         DaoFactory factory = new DaoFactory();
         System.out.println( factory.userDao() );
         System.out.println( factory.userDao() );
@@ -47,10 +45,6 @@ public class UserDaoTest {
         ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
 
         System.out.println( context.getBean("userDao" , UserDao.class));
-        log.debug("Counter {}" , context.getBean("connectionMaker" , CountingConnectionMaker.class)
-                .getCounter());
         System.out.println( context.getBean("userDao" , UserDao.class));
-        log.debug("Counter {}" , context.getBean("connectionMaker" , CountingConnectionMaker.class)
-                .getCounter());
     }
 }
