@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import springbook.user.dao.CountingConnectionMaker;
 import springbook.user.dao.DaoFactory;
 import springbook.user.dao.SimpleConnectionMaker;
@@ -20,7 +21,8 @@ public class UserDaoTest {
     @Test
     public void add() throws SQLException, ClassNotFoundException {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
+        //ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
+        ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
         UserDao dao = context.getBean("userDao" , UserDao.class);
         dao.deleteAll();
         User user = new User();
