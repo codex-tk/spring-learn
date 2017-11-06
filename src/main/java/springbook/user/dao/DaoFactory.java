@@ -8,7 +8,19 @@ public class DaoFactory {
     @Bean
     public UserDao userDao(){
         UserDao dao = new UserDao();
-        dao.setConnectionMaker(new SimpleConnectionMaker());
+        dao.setConnectionMaker(connectionMaker());
         return dao;
+    }
+
+    @Bean
+    public ConnectionMaker connectionMaker() {
+        CountingConnectionMaker c = new CountingConnectionMaker();
+        c.setRealConnectionMaker(realConnectionMaker());
+        return c;
+    }
+
+    @Bean
+    public ConnectionMaker realConnectionMaker() {
+        return new SimpleConnectionMaker();
     }
 }
