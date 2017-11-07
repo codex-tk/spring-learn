@@ -7,6 +7,7 @@ import springbook.user.domain.User;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.List;
 
 @Data
 public class UserDao {
@@ -38,6 +39,13 @@ public class UserDao {
                     rs.next();
                     return rs.getInt(1);
                 });
+    }
+
+    public List<User> getAll(){
+        return jdbcTemplate.query("select * from users order by id"
+                , ( rs , num ) -> new User( rs.getString("id")
+                        , rs.getString("name")
+                        , rs.getString("password")));
     }
 
 

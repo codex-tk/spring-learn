@@ -99,4 +99,25 @@ public class UserDaoTest {
     public void getUserFailure() throws SQLException {
         dao.get("invalid");
     }
+
+    @Test
+    public void getAll() throws SQLException {
+        dao.deleteAll();
+
+        List<User> userList = Arrays.asList(
+                new User("1", "Name 1", "Password 1")
+                , new User("2", "Name 2", "Password 2")
+                , new User("3", "Name 3", "Password 3")
+        );
+
+        IntStream.range(0,2).forEach(i->{
+            try {
+                dao.add(userList.get(i));
+                List<User> userAll = dao.getAll();
+                assertEquals(userAll.size() , i + 1);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }

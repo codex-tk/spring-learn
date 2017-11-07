@@ -2,6 +2,7 @@ package springbook.user.dao;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import javax.sql.DataSource;
@@ -15,7 +16,7 @@ public class DaoFactory {
     @Bean
     public UserDao userDao() throws SQLException, ClassNotFoundException {
         UserDao dao = new UserDao();
-        dao.setJdbcContext(jdbcContext());
+        dao.setJdbcTemplate(new JdbcTemplate(dataSource()));
         return dao;
     }
 
