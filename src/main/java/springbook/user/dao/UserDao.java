@@ -1,6 +1,7 @@
 package springbook.user.dao;
 
 import lombok.Data;
+import org.springframework.dao.EmptyResultDataAccessException;
 import springbook.user.domain.User;
 
 import javax.sql.DataSource;
@@ -11,7 +12,7 @@ public class UserDao {
 
     DataSource dataSource;
 
-    public void add(User user) throws ClassNotFoundException , SQLException {
+    public void add(User user) throws SQLException {
         Connection c  = dataSource.getConnection();
 
         PreparedStatement pstmt = c.prepareStatement(
@@ -26,29 +27,43 @@ public class UserDao {
         c.close();
     }
 
-    public User get( String id ) throws ClassNotFoundException, SQLException {
+    public User get( String id ) throws SQLException {
         Connection c  = dataSource.getConnection();
 
         PreparedStatement pstmt = c.prepareStatement("select * from users where id = ?");
         pstmt.setString(1,id );
         ResultSet rs = pstmt.executeQuery();
-
-        rs.next();
-
-        User user =new User();
-        user.setId( rs.getString("id"));
-        user.setName( rs.getString("name"));
-        user.setPassword(rs.getString("password"));
-
+        User user = null;
+        if ( rs.next() ){
+            user = new User();
+            user.setId( rs.getString("id"));
+            user.setName( rs.getString("name"));
+            user.setPassword(rs.getString("password"));
+        }
         rs.close();
         pstmt.close();
         c.close();
+        if (user == null) throw new EmptyResultDataAccessException(1);
         return user;
     }
 
-    public void deleteAll() throws ClassNotFoundException, SQLException {
+    public void deleteAll() throws SQLException {
         Connection c  = dataSource.getConnection();
-        c.createStatement().execute("delete from users");
+        PreparedStatement pstmt = c.prepareStatement("delete from users");
+        pstmt.executeUpdate();
+        pstmt.close();
         c.close();
+    }
+
+    public int getCount() throws SQLException {
+        Connection c = dataSource.getConnection();
+        PreparedStatement ps = c.prepareStatement("select count(*) from users");
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        int ans = rs.getInt(1);
+        rs.close();
+        ps.close();
+        c.close();
+        return ans;
     }
 }
