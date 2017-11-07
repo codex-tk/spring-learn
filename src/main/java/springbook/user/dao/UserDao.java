@@ -11,11 +11,15 @@ import java.sql.*;
 @Data
 public class UserDao {
 
-    JdbcContext jdbcContext;
+    //JdbcContext jdbcContext;
 
     JdbcTemplate jdbcTemplate;
 
     public void add(User user) throws SQLException {
+        jdbcTemplate.update(
+                "insert into users( id , name , password ) values( ? , ? , ?)"
+                , user.getId() , user.getName(),user.getPassword());
+        /*
         jdbcContext.executeStatement((Connection c) -> {
             PreparedStatement ps = c.prepareStatement(
                     "insert into users( id , name , password ) values( ? , ? , ?)");
@@ -23,7 +27,7 @@ public class UserDao {
             ps.setString( 2 , user.getName());
             ps.setString( 3 , user.getPassword());
             return ps;
-        });
+        });*/
         /*
         Connection c  = dataSource.getConnection();
 
@@ -40,6 +44,13 @@ public class UserDao {
     }
 
     public User get( String id ) throws SQLException {
+        return jdbcTemplate.queryForObject("select * from users where id = ?"
+                , new Object[] { id }
+                , ( rs , num ) -> new User( rs.getString("id")
+                        , rs.getString("name")
+                        , rs.getString("password"))
+        );
+        /*
         Connection c  = jdbcContext.getDataSource().getConnection();
 
         PreparedStatement pstmt = c.prepareStatement("select * from users where id = ?");
@@ -57,6 +68,7 @@ public class UserDao {
         c.close();
         if (user == null) throw new EmptyResultDataAccessException(1);
         return user;
+        */
     }
 
     public void deleteAll() throws SQLException {
@@ -78,7 +90,12 @@ public class UserDao {
     }
 
     public int getCount() throws SQLException {
-
+        return jdbcTemplate.query( c -> c.prepareStatement("select count(*) from users")
+                , rs-> {
+                    rs.next();
+                    return rs.getInt(1);
+                });
+        /*
         Connection c = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -95,7 +112,7 @@ public class UserDao {
             if ( rs != null ) try { rs.close(); } catch (Exception e){}
             if ( ps != null ) try { ps.close(); } catch (Exception e){}
             if ( c != null ) try { c.close(); } catch (Exception e){}
-        }
+        }*/
     }
 
 

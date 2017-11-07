@@ -21,7 +21,8 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="userDao" class="springbook.user.dao.UserDao">
-        <property name="jdbcContext" ref="jdbcContext"/>
+        <!--<property name="jdbcContext" ref="jdbcContext"/>-->
+
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 </beans>
