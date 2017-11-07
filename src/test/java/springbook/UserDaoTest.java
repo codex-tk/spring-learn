@@ -3,19 +3,14 @@ package springbook;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import springbook.user.dao.CountingConnectionMaker;
 import springbook.user.dao.DaoFactory;
-import springbook.user.dao.SimpleConnectionMaker;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.User;
 
@@ -24,6 +19,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import static org.junit.Assert.assertEquals;
+
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "./../applicationContext.xml")
@@ -31,13 +28,13 @@ public class UserDaoTest {
 
     @Autowired ApplicationContext context;
 
-    UserDao dao;
+    @Autowired UserDao dao;
 
     @Before
     public void setUp(){
         //ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
         //ApplicationContext context = new GenericXmlApplicationContext("");
-        dao = context.getBean("userDao" , UserDao.class);
+        //dao = context.getBean("userDao" , UserDao.class);
     }
 
     @Test

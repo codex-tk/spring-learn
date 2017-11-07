@@ -15,8 +15,15 @@ public class DaoFactory {
     @Bean
     public UserDao userDao() throws SQLException, ClassNotFoundException {
         UserDao dao = new UserDao();
-        dao.setDataSource(dataSource());
+        dao.setJdbcContext(jdbcContext());
         return dao;
+    }
+
+    @Bean
+    public JdbcContext jdbcContext() throws ClassNotFoundException, SQLException {
+        JdbcContext jdbcContext = new JdbcContext();
+        jdbcContext.setDataSource(dataSource());
+        return jdbcContext;
     }
 
     @Bean
