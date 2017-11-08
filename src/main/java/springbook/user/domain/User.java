@@ -48,4 +48,13 @@ public class User {
         result = 31 * result + recommend;
         return result;
     }
+
+    public void upgradeLevel() {
+        if ( level == null ) level = Level.BASIC;
+        else{
+            Level next = level.next();
+            if (next != null)
+                setLevel(next);
+        }
+    }
 }
