@@ -9,44 +9,12 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.util.List;
 
-@Data
-public class UserDao {
+public interface UserDao {
+    void add(User user);
+    User get( String id );
+    void deleteAll();
+    int getCount();
+    List<User> getAll();
 
-    JdbcTemplate jdbcTemplate;
-
-    public void add(User user) throws SQLException {
-        jdbcTemplate.update(
-                "insert into users( id , name , password ) values( ? , ? , ?)"
-                , user.getId() , user.getName(),user.getPassword());
-    }
-
-    public User get( String id ) throws SQLException {
-        return jdbcTemplate.queryForObject("select * from users where id = ?"
-                , new Object[] { id }
-                , ( rs , num ) -> new User( rs.getString("id")
-                        , rs.getString("name")
-                        , rs.getString("password"))
-        );
-    }
-
-    public void deleteAll() throws SQLException {
-        jdbcTemplate.update("delete from users");
-    }
-
-    public int getCount() throws SQLException {
-        return jdbcTemplate.query( c -> c.prepareStatement("select count(*) from users")
-                , rs-> {
-                    rs.next();
-                    return rs.getInt(1);
-                });
-    }
-
-    public List<User> getAll(){
-        return jdbcTemplate.query("select * from users order by id"
-                , ( rs , num ) -> new User( rs.getString("id")
-                        , rs.getString("name")
-                        , rs.getString("password")));
-    }
-
-
+    void update(User u);
 }

@@ -7,11 +7,13 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import springbook.user.dao.DaoFactory;
+import springbook.user.dao.olds.DaoFactory;
 import springbook.user.dao.UserDao;
+import springbook.user.domain.Level;
 import springbook.user.domain.User;
 
 import java.sql.SQLException;
@@ -30,6 +32,12 @@ public class UserDaoTest {
 
     @Autowired UserDao dao;
 
+    List<User> userList = Arrays.asList(
+            new User("1", "Name 1", "Password 1" , Level.BASIC , 0 , 0 )
+            , new User("2", "Name 2", "Password 2", Level.BASIC , 0 , 0 )
+            , new User("3", "Name 3", "Password 3", Level.BASIC , 0 , 0 )
+    );
+
     @Before
     public void setUp(){
         //ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
@@ -44,8 +52,8 @@ public class UserDaoTest {
 
         assertEquals(0 , dao.getCount());
 
-        User user0 = new User("0" , "Name" , "Password");
-        User user1 = new User("1" , "Name1" , "Password1");
+        User user0 = userList.get(0);
+        User user1 = userList.get(1);
 
         dao.add(user0);
         dao.add(user1);
@@ -54,11 +62,8 @@ public class UserDaoTest {
         User userget0 = dao.get(user0.getId());
         User userget1 = dao.get(user1.getId());
 
-        assertEquals(userget0.getName() , user0.getName());
-        assertEquals(userget0.getPassword() , user0.getPassword());
-
-        assertEquals(userget1.getName() , user1.getName());
-        assertEquals(userget1.getPassword() , user1.getPassword());
+        assertEquals(user0 , userget0);
+        assertEquals(user1 , userget1);
     }
 
     @Test
@@ -75,23 +80,14 @@ public class UserDaoTest {
 
     @Test
     public  void count() throws SQLException {
-        List<User> userList = Arrays.asList(
-                new User("1", "Name 1", "Password 1")
-                , new User("2", "Name 2", "Password 2")
-                , new User("3", "Name 3", "Password 3")
-        );
 
         dao.deleteAll();
 
         assertEquals(dao.getCount() , 0 );
 
         IntStream.range(0,2).forEach(i->{
-            try {
-                dao.add(userList.get(i));
-                assertEquals(dao.getCount() , i + 1);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            dao.add(userList.get(i));
+            assertEquals(dao.getCount() , i + 1);
         });
     }
 
@@ -104,20 +100,38 @@ public class UserDaoTest {
     public void getAll() throws SQLException {
         dao.deleteAll();
 
-        List<User> userList = Arrays.asList(
-                new User("1", "Name 1", "Password 1")
-                , new User("2", "Name 2", "Password 2")
-                , new User("3", "Name 3", "Password 3")
-        );
-
         IntStream.range(0,2).forEach(i->{
-            try {
-                dao.add(userList.get(i));
-                List<User> userAll = dao.getAll();
-                assertEquals(userAll.size() , i + 1);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            dao.add(userList.get(i));
+            List<User> userAll = dao.getAll();
+            assertEquals(userAll.size() , i + 1);
         });
     }
+
+    @Test(expected= DataAccessException.class)
+    public void duplicateKey(){
+        User u = userList.get(0);
+        User dup = userList.get(0);
+
+        dao.deleteAll();
+        dao.add(u);
+        dao.add(dup);
+    }
+
+    @Test
+    public void update(){
+        dao.deleteAll();
+        dao.add(userList.get(0));
+        dao.add(userList.get(1));
+
+        User u = userList.get(0);
+        u.setLogin(100);
+        u.setName("Sample");
+
+        dao.update( u );
+        User updatedUser = dao.get(u.getId());
+        assertEquals(u , updatedUser);
+        User sameUser = dao.get(userList.get(1).getId());
+        assertEquals(userList.get(1) , sameUser);
+    }
+
 }

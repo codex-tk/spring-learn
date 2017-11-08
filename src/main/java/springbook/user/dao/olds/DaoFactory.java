@@ -1,21 +1,20 @@
-package springbook.user.dao;
+package springbook.user.dao.olds;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+import springbook.user.dao.UserDao;
+import springbook.user.dao.UserDaoJdbc;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @Configuration
 public class DaoFactory {
     @Bean
     public UserDao userDao() throws SQLException, ClassNotFoundException {
-        UserDao dao = new UserDao();
+        UserDaoJdbc dao = new UserDaoJdbc();
         dao.setJdbcTemplate(new JdbcTemplate(dataSource()));
         return dao;
     }

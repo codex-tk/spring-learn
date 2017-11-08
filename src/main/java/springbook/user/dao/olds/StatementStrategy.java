@@ -1,4 +1,4 @@
-package springbook.user.dao;
+package springbook.user.dao.olds;
 import java.sql.*;
 
 public interface StatementStrategy {
