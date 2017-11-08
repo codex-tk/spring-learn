@@ -1,5 +1,6 @@
 package springbook;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +13,7 @@ import springbook.user.domain.Level;
 import springbook.user.domain.User;
 import springbook.user.service.UserService;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -55,7 +57,7 @@ public class UserServiceTest {
 
 
     @Test
-    public void upgradeLevels(){
+    public void upgradeLevels() throws SQLException {
         userDao.deleteAll();
         userList.stream().forEach(u->userService.add(u));
 
@@ -80,5 +82,42 @@ public class UserServiceTest {
         userService.add( u );
 
         assertEquals(userDao.get( u.getId() ).getLevel() , Level.BASIC);
+    }
+
+    @Data
+    public static class TestUserService extends UserService {
+        private final String id;
+
+        public TestUserService( String id ) {
+            this.id = id;
+        }
+
+        @Override
+        protected void upgradeLevel(User user) {
+            if( user.getId().equals(this.id)) throw new TestUserServiceException();
+            super.upgradeLevel(user);
+        }
+    }
+
+    @Test
+    public void upgradeAllOrNothing() throws SQLException {
+        userDao.deleteAll();
+        userList.stream().forEach(u->userService.add(u));
+        TestUserService service = new TestUserService(userList.get(3).getId());
+        service.setUserDao(userService.getUserDao());
+        service.setDataSource(userService.getDataSource());
+        try {
+            service.upgradeLevels();
+        }catch (Exception e) {
+        }
+        List<Level> levels = Arrays.asList(Level.BASIC
+                , Level.BASIC
+                , Level.SILVER
+                , Level.SILVER
+                , Level.GOLD);
+
+        IntStream.range(0,5).forEach( i -> {
+            assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i));
+        });
     }
 }
