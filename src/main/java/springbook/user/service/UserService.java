@@ -1,7 +1,11 @@
 package springbook.user.service;
 
 import lombok.Data;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
@@ -18,9 +22,8 @@ public class UserService {
     DataSource dataSource;
 
     public void upgradeLevels() throws SQLException {
-        TransactionSynchronizationManager.initSynchronization();
-        Connection c = DataSourceUtils.getConnection(dataSource);
-        c.setAutoCommit(false);
+        PlatformTransactionManager tm = new DataSourceTransactionManager(dataSource);
+        TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
         try {
             List<User> users = userDao.getAll();
             users.stream().forEach(u->{
@@ -28,16 +31,11 @@ public class UserService {
                     upgradeLevel(u);
                 }
             });
-            c.commit();
+            tm.commit(status);
         } catch ( Exception e ) {
-            c.rollback();
+            tm.rollback(status);
             throw e;
-        } finally {
-            DataSourceUtils.releaseConnection(c,dataSource);
-            TransactionSynchronizationManager.unbindResource(dataSource);
-            TransactionSynchronizationManager.clearSynchronization();
         }
-
     }
 
     protected void upgradeLevel(User user) {
