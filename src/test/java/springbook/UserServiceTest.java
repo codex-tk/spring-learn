@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.PlatformTransactionManager;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
@@ -106,9 +107,10 @@ public class UserServiceTest {
         TestUserService service = new TestUserService(userList.get(3).getId());
         service.setUserDao(userService.getUserDao());
         service.setDataSource(userService.getDataSource());
+        service.setTransactionManager(userService.getTransactionManager());
         try {
             service.upgradeLevels();
-        }catch (Exception e) {
+        }catch (TestUserServiceException e) {
         }
         List<Level> levels = Arrays.asList(Level.BASIC
                 , Level.BASIC

@@ -20,10 +20,10 @@ import java.util.List;
 public class UserService {
     UserDao userDao;
     DataSource dataSource;
+    PlatformTransactionManager transactionManager;
 
     public void upgradeLevels() throws SQLException {
-        PlatformTransactionManager tm = new DataSourceTransactionManager(dataSource);
-        TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
+        TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
         try {
             List<User> users = userDao.getAll();
             users.stream().forEach(u->{
@@ -31,9 +31,9 @@ public class UserService {
                     upgradeLevel(u);
                 }
             });
-            tm.commit(status);
+            transactionManager.commit(status);
         } catch ( Exception e ) {
-            tm.rollback(status);
+            transactionManager.rollback(status);
             throw e;
         }
     }
