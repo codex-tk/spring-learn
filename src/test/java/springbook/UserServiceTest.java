@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -14,7 +15,10 @@ import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
 import springbook.user.service.UserService;
+import springbook.user.service.UserServiceImpl;
+import springbook.user.service.UserServiceTx;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
@@ -32,13 +36,24 @@ public class UserServiceTest {
     UserService userService;
 
     @Autowired
+    DataSource dataSource;
+
+    @Autowired
     UserDao userDao;
+
+    @Autowired
+    MailSender mailSender;
+
+    @Autowired
+    PlatformTransactionManager transactionManager;
 
     @Test
     public void bean(){
         assertThat( this.userService , is(notNullValue()) );
+        assertThat( this.dataSource , is(notNullValue()) );
         assertThat( this.userDao , is(notNullValue()) );
-        assertThat( this.userService.getMailSender() , is(notNullValue()));
+        assertThat( this.mailSender , is(notNullValue()));
+        assertThat( this.transactionManager , is(notNullValue()));
     }
 
     List<User> userList;
@@ -88,7 +103,7 @@ public class UserServiceTest {
     }
 
     @Data
-    public static class TestUserService extends UserService {
+    public static class TestUserService extends UserServiceImpl {
         private final String id;
 
         public TestUserService( String id ) {
@@ -107,12 +122,14 @@ public class UserServiceTest {
         userDao.deleteAll();
         userList.stream().forEach(u->userService.add(u));
         TestUserService service = new TestUserService(userList.get(3).getId());
-        service.setUserDao(userService.getUserDao());
-        service.setDataSource(userService.getDataSource());
-        service.setTransactionManager(userService.getTransactionManager());
-        service.setMailSender(userService.getMailSender());
+        service.setUserDao(userDao);
+        service.setDataSource(dataSource);
+        service.setMailSender(mailSender);
+        UserServiceTx txUserService = new UserServiceTx();
+        txUserService.setTransactionManager(transactionManager);
+        txUserService.setUserService(service);
         try {
-            service.upgradeLevels();
+            txUserService.upgradeLevels();
         }catch (TestUserServiceException e) {
         }
         List<Level> levels = Arrays.asList(Level.BASIC
