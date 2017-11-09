@@ -3,6 +3,9 @@ package springbook.user.service;
 import lombok.Data;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
@@ -21,12 +24,12 @@ public class UserService {
     UserDao userDao;
     DataSource dataSource;
     PlatformTransactionManager transactionManager;
+    MailSender mailSender;
 
     public void upgradeLevels() throws SQLException {
         TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
         try {
-            List<User> users = userDao.getAll();
-            users.stream().forEach(u->{
+            userDao.getAll().forEach(u->{
                 if ( canUpgradeLevel(u)){
                     upgradeLevel(u);
                 }
@@ -41,6 +44,13 @@ public class UserService {
     protected void upgradeLevel(User user) {
         user.upgradeLevel();
         userDao.update(user);
+        sendUpgradeMail(user);
+    }
+
+    private void sendUpgradeMail(User user) {
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+
+        this.mailSender.send(mailMessage);
     }
 
     public Boolean canUpgradeLevel(User user ){

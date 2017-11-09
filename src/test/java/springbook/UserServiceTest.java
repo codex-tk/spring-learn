@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -37,6 +38,7 @@ public class UserServiceTest {
     public void bean(){
         assertThat( this.userService , is(notNullValue()) );
         assertThat( this.userDao , is(notNullValue()) );
+        assertThat( this.userService.getMailSender() , is(notNullValue()));
     }
 
     List<User> userList;
@@ -108,6 +110,7 @@ public class UserServiceTest {
         service.setUserDao(userService.getUserDao());
         service.setDataSource(userService.getDataSource());
         service.setTransactionManager(userService.getTransactionManager());
+        service.setMailSender(userService.getMailSender());
         try {
             service.upgradeLevels();
         }catch (TestUserServiceException e) {

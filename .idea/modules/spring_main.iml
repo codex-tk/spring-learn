@@ -13,6 +13,8 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: javax.mail:javax.mail-api:1.6.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.0.1.RELEASE" level="project" />
