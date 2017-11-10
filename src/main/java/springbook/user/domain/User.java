@@ -1,9 +1,11 @@
 package springbook.user.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class User {
     String id;
@@ -12,15 +14,6 @@ public class User {
     Level level;
     int login;
     int recommend;
-
-    public User(String id, String name, String password, Level level, int login, int recommend) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.level = level;
-        this.login = login;
-        this.recommend = recommend;
-    }
 
     @Override
     public boolean equals(Object o) {
