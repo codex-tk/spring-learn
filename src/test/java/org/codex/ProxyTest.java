@@ -38,12 +38,27 @@ public class ProxyTest {
             return ret.toUpperCase();
         }
     }
+
+    @Data
+    @AllArgsConstructor
+    public static class UpperCaseHandler0 implements InvocationHandler {
+        Object object;
+
+        @Override
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            Object result = method.invoke(object,args);
+            if ( result instanceof String){
+                return ((String)result).toUpperCase();
+            }
+            return result;
+        }
+    }
     @Test
     public void dynamicProxy() {
         Hello helloProxy = (Hello) Proxy.newProxyInstance(
                 getClass().getClassLoader()
                 , new Class[] { Hello.class }
-                , new UpperCaseHandler( new HelloTarget() ));
+                , new UpperCaseHandler0( new HelloTarget() ));
 
         assertEquals( helloProxy.sayHello("tk") , "HELLO TK");
     }

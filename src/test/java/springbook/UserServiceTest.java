@@ -1,6 +1,7 @@
 package springbook;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,11 +15,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
+import springbook.user.service.TransactionHandler;
 import springbook.user.service.UserService;
 import springbook.user.service.UserServiceImpl;
 import springbook.user.service.UserServiceTx;
 
 import javax.sql.DataSource;
+import java.lang.reflect.Proxy;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
@@ -77,7 +80,7 @@ public class UserServiceTest {
     @Test
     public void upgradeLevels() throws SQLException {
         userDao.deleteAll();
-        userList.stream().forEach(u->userService.add(u));
+        userList.forEach(u->userService.add(u));
 
         userService.upgradeLevels();
 
@@ -87,9 +90,10 @@ public class UserServiceTest {
                 , Level.GOLD
                 , Level.GOLD);
 
-        IntStream.range(0,5).forEach( i -> {
-            assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i));
-        });
+        IntStream.range(0,5).forEach( i -> assertEquals(
+                    userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)
+                )
+        );
     }
 
     @Test
@@ -102,6 +106,7 @@ public class UserServiceTest {
         assertEquals(userDao.get( u.getId() ).getLevel() , Level.BASIC);
     }
 
+    @EqualsAndHashCode(callSuper = true)
     @Data
     public static class TestUserService extends UserServiceImpl {
         private final String id;
@@ -116,18 +121,54 @@ public class UserServiceTest {
             super.upgradeLevel(user);
         }
     }
+//
+//    @Test
+//    public void upgradeAllOrNothing() throws SQLException {
+//        userDao.deleteAll();
+//        userList.stream().forEach(u->userService.add(u));
+//        TestUserService service = new TestUserService(userList.get(3).getId());
+//        service.setUserDao(userDao);
+//        service.setDataSource(dataSource);
+//        service.setMailSender(mailSender);
+//        UserServiceTx txUserService = new UserServiceTx();
+//        txUserService.setTransactionManager(transactionManager);
+//        txUserService.setUserService(service);
+//        try {
+//            txUserService.upgradeLevels();
+//        }catch (TestUserServiceException e) {
+//        }
+//        List<Level> levels = Arrays.asList(Level.BASIC
+//                , Level.BASIC
+//                , Level.SILVER
+//                , Level.SILVER
+//                , Level.GOLD);
+//
+//        IntStream.range(0,5).forEach( i -> {
+//            assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i));
+//        });
+//    }
+
 
     @Test
     public void upgradeAllOrNothing() throws SQLException {
         userDao.deleteAll();
-        userList.stream().forEach(u->userService.add(u));
+        userList.forEach(u->userService.add(u));
         TestUserService service = new TestUserService(userList.get(3).getId());
         service.setUserDao(userDao);
         service.setDataSource(dataSource);
         service.setMailSender(mailSender);
-        UserServiceTx txUserService = new UserServiceTx();
-        txUserService.setTransactionManager(transactionManager);
-        txUserService.setUserService(service);
+
+        TransactionHandler txHandler = new TransactionHandler();
+        txHandler.setTarget(service);
+        txHandler.setTransactionManager(this.transactionManager);
+        txHandler.setPattern("upgradeLevels");
+
+        UserService txUserService = (UserService) Proxy.newProxyInstance(
+                getClass().getClassLoader()
+                , new Class[] { UserService.class }
+                , txHandler
+        );
+
         try {
             txUserService.upgradeLevels();
         }catch (TestUserServiceException e) {
@@ -138,8 +179,6 @@ public class UserServiceTest {
                 , Level.SILVER
                 , Level.GOLD);
 
-        IntStream.range(0,5).forEach( i -> {
-            assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i));
-        });
+        IntStream.range(0,5).forEach( i -> assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)));
     }
 }
