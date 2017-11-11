@@ -7,18 +7,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.PlatformTransactionManager;
 import springbook.user.dao.UserDao;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
-import springbook.user.service.TransactionHandler;
-import springbook.user.service.UserService;
-import springbook.user.service.UserServiceImpl;
-import springbook.user.service.UserServiceTx;
+import springbook.user.service.*;
 
 import javax.sql.DataSource;
 import java.lang.reflect.Proxy;
@@ -49,6 +48,9 @@ public class UserServiceTest {
 
     @Autowired
     PlatformTransactionManager transactionManager;
+
+    @Autowired
+    ApplicationContext applicationContext;
 
     @Test
     public void bean(){
@@ -149,8 +151,43 @@ public class UserServiceTest {
 //    }
 
 
+//    @Test
+//    @DirtiesContext
+//    public void upgradeAllOrNothing() throws SQLException {
+//        userDao.deleteAll();
+//        userList.forEach(u->userService.add(u));
+//        TestUserService service = new TestUserService(userList.get(3).getId());
+//        service.setUserDao(userDao);
+//        service.setDataSource(dataSource);
+//        service.setMailSender(mailSender);
+//
+//        TransactionHandler txHandler = new TransactionHandler();
+//        txHandler.setTarget(service);
+//        txHandler.setTransactionManager(this.transactionManager);
+//        txHandler.setPattern("upgradeLevels");
+//
+//        UserService txUserService = (UserService) Proxy.newProxyInstance(
+//                getClass().getClassLoader()
+//                , new Class[] { UserService.class }
+//                , txHandler
+//        );
+//
+//        try {
+//            txUserService.upgradeLevels();
+//        }catch (TestUserServiceException e) {
+//        }
+//        List<Level> levels = Arrays.asList(Level.BASIC
+//                , Level.BASIC
+//                , Level.SILVER
+//                , Level.SILVER
+//                , Level.GOLD);
+//
+//        IntStream.range(0,5).forEach( i -> assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)));
+//    }
+
     @Test
-    public void upgradeAllOrNothing() throws SQLException {
+    @DirtiesContext
+    public void upgradeAllOrNothing() throws Exception {
         userDao.deleteAll();
         userList.forEach(u->userService.add(u));
         TestUserService service = new TestUserService(userList.get(3).getId());
@@ -158,16 +195,12 @@ public class UserServiceTest {
         service.setDataSource(dataSource);
         service.setMailSender(mailSender);
 
-        TransactionHandler txHandler = new TransactionHandler();
-        txHandler.setTarget(service);
-        txHandler.setTransactionManager(this.transactionManager);
-        txHandler.setPattern("upgradeLevels");
+        TransactionProxyFactoryBean factory = this.applicationContext.getBean("&userService"
+                , TransactionProxyFactoryBean.class );
 
-        UserService txUserService = (UserService) Proxy.newProxyInstance(
-                getClass().getClassLoader()
-                , new Class[] { UserService.class }
-                , txHandler
-        );
+        factory.setTarget(service);
+
+        UserService txUserService = (UserService) factory.getObject();
 
         try {
             txUserService.upgradeLevels();
