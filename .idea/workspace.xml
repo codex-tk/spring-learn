@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1776fd1d-edb0-4cb9-a28e-6577f3196e49" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -46,7 +46,7 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.86296487">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.60189015">
+        <splitter split-orientation="horizontal" split-proportion="0.4335499">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file leaf-file-name="UserServiceTest.java" pinned="false" current-in-tab="false">
@@ -61,7 +61,7 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="ProxyTest.java" pinned="false" current-in-tab="true">
+              <file leaf-file-name="ProxyTest.java" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="1242">
@@ -70,6 +70,20 @@
                         <element signature="imports" expanded="true" />
                         <element signature="e#7559#7978#0" expanded="true" />
                         <element signature="e#7977#7978#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="NameMatchClassMethodPointcut.java" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="105">
+                      <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="41" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                        <element signature="e#353#354#0" expanded="true" />
+                        <element signature="e#423#424#0" expanded="true" />
                       </folding>
                     </state>
                   </provider>
@@ -147,18 +161,6 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="TransactionAdvice.java" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAdvice.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="150">
-                      <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-                      <folding>
-                        <element signature="imports" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
             </leaf>
           </split-first>
           <split-second>
@@ -166,8 +168,8 @@
               <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="855">
-                      <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+                    <state relative-caret-position="930">
+                      <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
                       <folding />
                     </state>
                   </provider>
@@ -694,6 +696,7 @@
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" />
       </list>
     </option>
   </component>
@@ -776,6 +779,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="springbook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-learn" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="springbook" type="462c0819:PsiDirectoryNode" />
+              <item name="proxy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="spring" type="b2602c69:ProjectViewProjectNode" />
@@ -1204,7 +1216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510491702603</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Pointcut ext">
+      <created>1510498792880</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1510498792880</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1321,7 +1340,8 @@
     <MESSAGE value="ProxyFactoryBean apply" />
     <MESSAGE value="ProxyFactoryBean impl" />
     <MESSAGE value="Spring Advisor apply" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring Advisor apply" />
+    <MESSAGE value="Pointcut ext" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pointcut ext" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1337,13 +1357,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/3.1.0.RELEASE/818fa065377869b3d4d045d9c1804a2166bad0c8/spring-jdbc-3.1.0.RELEASE-sources.jar!/org/springframework/jdbc/core/ResultSetExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/3.1.0.RELEASE/818fa065377869b3d4d045d9c1804a2166bad0c8/spring-jdbc-3.1.0.RELEASE-sources.jar!/org/springframework/jdbc/core/RowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1670,17 +1683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1287">
@@ -1759,6 +1761,29 @@
             <element signature="e#7977#7978#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="54" lean-forward="true" selection-start-line="62" selection-start-column="54" selection-end-line="62" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>
