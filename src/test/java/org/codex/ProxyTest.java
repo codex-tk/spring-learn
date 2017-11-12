@@ -2,9 +2,12 @@ package org.codex;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInvocation;
 import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactoryBean;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
@@ -12,6 +15,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
@@ -90,7 +95,7 @@ public class ProxyTest {
         assertEquals( helloProxy.sayThankYou("tk") , "THANKYOU TK");
     }
 
-    interface PointCut {
+    interface BasicPointCut {
         Boolean match( Method method );
     }
 
@@ -112,7 +117,7 @@ public class ProxyTest {
 
     @Data
     @AllArgsConstructor
-    public static class PrefixMatchPointCut implements PointCut {
+    public static class PrefixMatchPointCut implements BasicPointCut {
         String prefix;
 
         @Override
@@ -123,69 +128,84 @@ public class ProxyTest {
 
     @Data
     @AllArgsConstructor
-    public static class ProxyMethdHandler implements InvocationHandler {
-        Object object;
+    public static class BasicAdvisor {
+        BasicPointCut pointCut;
         BasicAdvice advice;
-        PointCut pointCut;
-        @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            if ( pointCut.match(method)) {
-                return advice.invoke(new Operation(object,method,args));
+
+        public Object invoke(Object target , Object proxy, Method method, Object[] args) throws Throwable {
+            if ( pointCut.match(method)){
+                return advice.invoke(new Operation(target,method,args));
             }
-            return method.invoke(object,args);
+            return method.invoke(target,args);
         }
     }
+
 
     @Data
     @AllArgsConstructor
     public static class ProxyFactory<T> {
         Class<T> clazz;
         T object;
-        BasicAdvice advice;
-        PointCut pointCut;
+        List<BasicAdvisor> advisors;
+
+        @Data
+        @AllArgsConstructor
+        public static class InvocationHandlerImpl implements InvocationHandler {
+            Object object;
+            List<BasicAdvisor> advisors;
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                for (BasicAdvisor advisor :advisors ) {
+                    if ( advisor.getPointCut().match(method)){
+                        return advisor.invoke( object , proxy , method , args );
+                    }
+                }
+                return method.invoke(object,args);
+            }
+        }
 
         public T getObject(){
             return (T)Proxy.newProxyInstance(
                     getClass().getClassLoader()
                     , new Class[] { clazz }
-                    , new ProxyMethdHandler(object
-                            , advice
-                            , pointCut));
-        };
+                    , new InvocationHandlerImpl(object , advisors ));
+        }
     }
 
     @Test
     public void dynamicProxy1() {
+        BasicAdvisor basicAdvisor = new BasicAdvisor( m->m.getName().startsWith("sayH")
+                ,  (Operation o) -> {
+            Object ans = o.proceed();
+            if ( ans instanceof String ) {
+                return ((String) ans).toUpperCase();
+            }
+            return ans;
+        });
+
         Hello helloProxy = new ProxyFactory<Hello>(
                 Hello.class
                 , new HelloTarget()
-                ,  (Operation o) -> {
-                    Object ans = o.proceed();
-                    if ( ans instanceof String ) {
-                        return ((String) ans).toUpperCase();
-                    }
-                    return ans;
-                }
-                , m->m.getName().startsWith("say")).getObject();
-//
-//
-//                (Hello) Proxy.newProxyInstance(
-//                getClass().getClassLoader()
-//                , new Class[] { Hello.class }
-//                , new UpperCaseHandler1(
-//                        new HelloTarget()
-//                        , (Operation o) -> {
-//                            Object ans = o.proceed();
-//                            if ( ans instanceof String ) {
-//                                return ((String) ans).toUpperCase();
-//                            }
-//                            return ans;
-//                        }
-//                        , m->m.getName().startsWith("say")));
-//                        //, new PrefixMatchPointCut( "say" ) ));
+                , Arrays.asList(basicAdvisor)
+                ).getObject();
 
         assertEquals( helloProxy.sayHello("tk") , "HELLO TK");
         assertEquals( helloProxy.sayHi("tk") , "HI TK");
-        assertEquals( helloProxy.sayThankYou("tk") , "THANKYOU TK");
+        assertEquals( helloProxy.sayThankYou("tk") , "ThankYou tk");
+    }
+
+    @Test
+    public void advicePointCut(){
+        ProxyFactoryBean factoryBean = new ProxyFactoryBean();
+        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
+        pointcut.setMappedName("sayH*");
+
+        factoryBean.setTarget(new HelloTarget());
+        factoryBean.addAdvisor(new DefaultPointcutAdvisor( pointcut ,   new UpperCaseAdvice()));
+        Hello helloProxy = (Hello)factoryBean.getObject();
+
+        assertEquals( helloProxy.sayHello("tk") , "HELLO TK");
+        assertEquals( helloProxy.sayHi("tk") , "HI TK");
+        assertEquals( helloProxy.sayThankYou("tk") , "ThankYou tk");
     }
 }

@@ -21,6 +21,8 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
+    <bean id="mailSender" class="springbook.user.service.DummyMailSender">
+    </bean>
     <!--
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="mail.server.com"/>
@@ -32,14 +34,21 @@
         <property name="transactionManager" ref="transactionManager"/>
         <property name="userService" ref="userServiceImpl"/>
     </bean>
-    -->
-    <bean id="mailSender" class="springbook.user.service.DummyMailSender">
-    </bean>
+
     <bean id="userService" class="springbook.user.service.TransactionProxyFactoryBean">
         <property name="objectType" value="springbook.user.service.UserService"/>
         <property name="target" ref="userServiceImpl"/>
         <property name="transactionManager" ref="transactionManager"/>
         <property name="pattern" value="upgradeLevels"/>
+    </bean>
+       -->
+    <bean id="userService" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="userServiceImpl"/>
+        <property name="interceptorNames">
+            <list>
+                <value>transactionAdvisor</value>
+            </list>
+        </property>
     </bean>
     <bean id="userServiceImpl" class="springbook.user.service.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
@@ -47,4 +56,14 @@
         <property name="mailSender" ref="mailSender"/>
     </bean>
 
+    <bean id="transactionAdvice" class="springbook.proxy.TransactionAdvice" >
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+    <bean id="transactionPointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+        <property name="mappedName" value="upgrade*"/>
+    </bean>
+    <bean id="transactionAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="advice" ref="transactionAdvice"/>
+        <property name="pointcut" ref="transactionPointCut"/>
+    </bean>
 </beans>

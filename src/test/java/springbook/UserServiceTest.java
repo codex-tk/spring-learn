@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.mail.MailSender;
@@ -194,10 +195,12 @@ public class UserServiceTest {
         service.setUserDao(userDao);
         service.setDataSource(dataSource);
         service.setMailSender(mailSender);
-
+/*
         TransactionProxyFactoryBean factory = this.applicationContext.getBean("&userService"
                 , TransactionProxyFactoryBean.class );
-
+*/
+        ProxyFactoryBean factory = this.applicationContext.getBean("&userService"
+                ,ProxyFactoryBean.class);
         factory.setTarget(service);
 
         UserService txUserService = (UserService) factory.getObject();
