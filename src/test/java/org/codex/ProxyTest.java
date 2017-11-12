@@ -5,6 +5,8 @@ import lombok.Data;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInvocation;
 import org.junit.Test;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
@@ -194,18 +196,53 @@ public class ProxyTest {
         assertEquals( helloProxy.sayThankYou("tk") , "ThankYou tk");
     }
 
+
+
     @Test
     public void advicePointCut(){
-        ProxyFactoryBean factoryBean = new ProxyFactoryBean();
         NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
         pointcut.setMappedName("sayH*");
 
-        factoryBean.setTarget(new HelloTarget());
+        checkAdviced(new HelloTarget() , pointcut , true );
+    }
+
+    public void checkAdviced(Object target , Pointcut pointcut , Boolean adviced ) {
+        ProxyFactoryBean factoryBean = new ProxyFactoryBean();
+        factoryBean.setTarget(target);
         factoryBean.addAdvisor(new DefaultPointcutAdvisor( pointcut ,   new UpperCaseAdvice()));
         Hello helloProxy = (Hello)factoryBean.getObject();
 
-        assertEquals( helloProxy.sayHello("tk") , "HELLO TK");
-        assertEquals( helloProxy.sayHi("tk") , "HI TK");
-        assertEquals( helloProxy.sayThankYou("tk") , "ThankYou tk");
+        if (adviced) {
+            assertEquals(helloProxy.sayHello("tk"), "HELLO TK");
+            assertEquals(helloProxy.sayHi("tk"), "HI TK");
+            assertEquals(helloProxy.sayThankYou("tk"), "ThankYou tk");
+        }else{
+            assertEquals(helloProxy.sayHello("tk"), "Hello tk");
+            assertEquals(helloProxy.sayHi("tk"), "Hi tk");
+            assertEquals(helloProxy.sayThankYou("tk"), "ThankYou tk");
+        }
+    }
+
+    @Test
+    public void pointCutExt(){
+        class HelloWorld extends HelloTarget{};
+        class HelloTk extends HelloTarget{};
+
+        NameMatchMethodPointcut pointCutExt = new NameMatchMethodPointcut(){
+            @Override
+            public ClassFilter getClassFilter() {
+                return new ClassFilter() {
+                    @Override
+                    public boolean matches(Class<?> clazz) {
+                        boolean ans = clazz.getSimpleName().startsWith("HelloT");
+                        return ans;
+                    }
+                };
+            }
+        };
+        pointCutExt.setMappedName("sayH*");
+        checkAdviced(new HelloTarget() , pointCutExt , true );
+        checkAdviced(new HelloWorld() , pointCutExt , false );
+        checkAdviced(new HelloTk() , pointCutExt , true );
     }
 }
