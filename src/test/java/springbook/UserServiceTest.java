@@ -111,19 +111,23 @@ public class UserServiceTest {
 
     @EqualsAndHashCode(callSuper = true)
     @Data
-    public static class TestUserService extends UserServiceImpl {
+    public static class TestUserServiceImpl extends UserServiceImpl {
         private final String id;
 
-        public TestUserService( String id ) {
+        public TestUserServiceImpl( String id ) {
             this.id = id;
         }
 
         @Override
         protected void upgradeLevel(User user) {
-            if( user.getId().equals(this.id)) throw new TestUserServiceException();
+            if( user.getId().equals(this.id))
+                throw new TestUserServiceException();
             super.upgradeLevel(user);
         }
     }
+
+    @Autowired
+    UserService testUserService;
 //
 //    @Test
 //    public void upgradeAllOrNothing() throws SQLException {
@@ -186,27 +190,45 @@ public class UserServiceTest {
 //        IntStream.range(0,5).forEach( i -> assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)));
 //    }
 
+//    @Test
+//    @DirtiesContext
+//    public void upgradeAllOrNothing() throws Exception {
+//        userDao.deleteAll();
+//        userList.forEach(u->userService.add(u));
+//        TestUserService service = new TestUserService(userList.get(3).getId());
+//        service.setUserDao(userDao);
+//        service.setDataSource(dataSource);
+//        service.setMailSender(mailSender);
+///*
+//        TransactionProxyFactoryBean factory = this.applicationContext.getBean("&userService"
+//                , TransactionProxyFactoryBean.class );
+//*/
+//        ProxyFactoryBean factory = this.applicationContext.getBean("&userService"
+//                ,ProxyFactoryBean.class);
+//        factory.setTarget(service);
+//
+//        UserService txUserService = (UserService) factory.getObject();
+//
+//        try {
+//            txUserService.upgradeLevels();
+//        }catch (TestUserServiceException e) {
+//        }
+//        List<Level> levels = Arrays.asList(Level.BASIC
+//                , Level.BASIC
+//                , Level.SILVER
+//                , Level.SILVER
+//                , Level.GOLD);
+//
+//        IntStream.range(0,5).forEach( i -> assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)));
+//    }
+
     @Test
-    @DirtiesContext
     public void upgradeAllOrNothing() throws Exception {
         userDao.deleteAll();
         userList.forEach(u->userService.add(u));
-        TestUserService service = new TestUserService(userList.get(3).getId());
-        service.setUserDao(userDao);
-        service.setDataSource(dataSource);
-        service.setMailSender(mailSender);
-/*
-        TransactionProxyFactoryBean factory = this.applicationContext.getBean("&userService"
-                , TransactionProxyFactoryBean.class );
-*/
-        ProxyFactoryBean factory = this.applicationContext.getBean("&userService"
-                ,ProxyFactoryBean.class);
-        factory.setTarget(service);
-
-        UserService txUserService = (UserService) factory.getObject();
 
         try {
-            txUserService.upgradeLevels();
+            testUserService.upgradeLevels();
         }catch (TestUserServiceException e) {
         }
         List<Level> levels = Arrays.asList(Level.BASIC
