@@ -2,6 +2,7 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
@@ -54,11 +55,14 @@
     <bean id="transactionPointCut" class="org.springframework.aop.support.NameMatchMethodPointcut">
         <property name="mappedName" value="upgrade*"/>
     </bean>
-    -->
-    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
-    <bean id="transactionPointCut" class="springbook.proxy.NameMatchClassMethodPointcut">
+       <bean id="transactionPointCut" class="springbook.proxy.NameMatchClassMethodPointcut">
         <property name="mappedName" value="upgrade*"/>
         <property name="mappedClassName" value="*ServiceImpl"/>
+    </bean>
+    -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+    <bean id="transactionPointCut" class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
+        <property name="expression" value="execution(* *..*ServiceImpl.upgrade*(..))"/>
     </bean>
     <bean id="transactionAdvice" class="springbook.proxy.TransactionAdvice" >
         <property name="transactionManager" ref="transactionManager"/>
