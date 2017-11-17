@@ -19,6 +19,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
@@ -157,12 +158,18 @@ public class ProxyTest {
             List<BasicAdvisor> advisors;
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                Optional<BasicAdvisor> advisor = advisors.stream().filter(a -> a.getPointCut().match(method)).findFirst();
+                if ( advisor.isPresent() ) {
+                    return advisor.get().invoke(object,proxy,method,args);
+                }
+                return method.invoke(object,args);
+                /*
                 for (BasicAdvisor advisor :advisors ) {
                     if ( advisor.getPointCut().match(method)){
                         return advisor.invoke( object , proxy , method , args );
                     }
                 }
-                return method.invoke(object,args);
+                return method.invoke(object,args);*/
             }
         }
 

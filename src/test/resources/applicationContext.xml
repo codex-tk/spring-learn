@@ -72,10 +72,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="mailSender" ref="mailSender"/>
     </bean>
-    <bean id="testUserService" class="springbook.UserServiceTest$TestUserServiceImpl">
+    <bean id="testUserService" class="springbook.UserServiceTest$TestUserServiceImpl" parent="userService">
         <constructor-arg name="id" value="4"/>
-        <property name="userDao" ref="userDao"/>
-        <property name="dataSource" ref="dataSource"/>
-        <property name="mailSender" ref="mailSender"/>
     </bean>
 </beans>

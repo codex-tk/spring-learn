@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1776fd1d-edb0-4cb9-a28e-6577f3196e49" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_aspectj_aspectjweaver_1_8_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aspects_5_0_1_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/spring_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/spring_main.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/spring_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/spring_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" afterPath="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,14 +51,14 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5160469">
+    <splitter split-orientation="horizontal" split-proportion="0.48536927">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ProxyTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3270">
-                  <caret line="242" column="40" lean-forward="false" selection-start-line="242" selection-start-column="40" selection-end-line="242" selection-end-column="40" />
+                <state relative-caret-position="615">
+                  <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -61,38 +66,83 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="NameMatchClassMethodPointcut.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java">
+          <file leaf-file-name="PointCutTest.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <state relative-caret-position="195">
+                  <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#353#354#0" expanded="true" />
-                    <element signature="e#423#424#0" expanded="true" />
+                    <element signature="e#335#336#0" expanded="true" />
+                    <element signature="e#370#371#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TransactionAdvice.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAdvice.java">
+          <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build.gradle">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="630">
+                  <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ReflectiveMethodInvocation.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
+          <file leaf-file-name="Assert.java" pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="385">
-                  <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+                  <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#4455#4456#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ReflectiveCallable.java" pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ParentRunner.java" pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1096">
+                  <caret line="328" column="0" lean-forward="false" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Optional.java" pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Optional.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="797">
+                  <caret line="144" column="19" lean-forward="false" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#4242#4243#0" expanded="true" />
+                    <element signature="e#4278#4279#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TransactionAdvice.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAdvice.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -100,11 +150,9 @@
           <file leaf-file-name="UserServiceTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1650">
-                  <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="428">
+                  <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -112,51 +160,11 @@
           <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+                <state relative-caret-position="330">
+                  <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NameMatchMethodPointcut.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/support/NameMatchMethodPointcut.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="StaticMethodMatcherPointcut.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/support/StaticMethodMatcherPointcut.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="32" column="72" lean-forward="false" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="StaticMethodMatcher.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/support/StaticMethodMatcher.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MethodMatcher.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/MethodMatcher.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
-                  <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -165,11 +173,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DaoFactory.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DaoFactory.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/DaoFactory.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+                <state relative-caret-position="465">
+                  <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -209,11 +217,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1125">
-                  <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+                <state relative-caret-position="1050">
+                  <caret line="70" column="48" lean-forward="false" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -244,7 +252,7 @@
           <file leaf-file-name="AutowiredAnnotationBeanPostProcessor.java" pinned="false" current-in-tab="false">
             <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.0.1.RELEASE/760c860ca9374e5d84934a6b5ad505df302e2c46/spring-beans-5.0.1.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
+                <state relative-caret-position="2670">
                   <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
                   <folding />
                 </state>
@@ -460,8 +468,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4530502735082" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="869753748" />
+        <entry key="$PROJECT_DIR$" value="4531195862756" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3743673861" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="615277776" />
       </map>
     </option>
@@ -663,7 +671,6 @@
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/TestUserServiceException.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/DaoFactory.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/DummyMailSender.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java" />
@@ -675,10 +682,12 @@
         <option value="C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/sun/misc/ProxyGenerator.class" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAcvice.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAdvice.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java" />
       </list>
     </option>
   </component>
@@ -706,6 +715,23 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="spring" type="cbb8eebc:String" user="spring" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="spring" type="cbb8eebc:String" user="spring" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -739,23 +765,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="spring" type="cbb8eebc:String" user="spring" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="spring" type="cbb8eebc:String" user="spring" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -921,7 +930,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in spring_test (1)">
+  <component name="RunManager" selected="JUnit.PointCutTest">
     <configuration name="All in spring_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="spring_test" />
@@ -931,6 +940,31 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="PointCutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="springbook.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spring_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="springbook" />
+      <option name="MAIN_CLASS_NAME" value="springbook.PointCutTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -956,31 +990,6 @@
       <option name="MAIN_CLASS_NAME" value="springbook.UserDaoTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="UserDaoTest.addAndGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="springbook.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="spring_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="springbook" />
-      <option name="MAIN_CLASS_NAME" value="springbook.UserDaoTest" />
-      <option name="METHOD_NAME" value="addAndGet" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1124,18 +1133,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.UserDaoTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.addAndGet" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getUserFailure" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in spring_test (1)" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getAll" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getUserFailure" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.All in spring_test (1)" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getAll" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PointCutTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in spring_test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getAll" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getUserFailure" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserDaoTest.addAndGet" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PointCutTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in spring_test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserDaoTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getAll" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserDaoTest.getUserFailure" />
       </list>
     </recent_temporary>
   </component>
@@ -1212,39 +1221,46 @@
       <option name="project" value="LOCAL" />
       <updated>1510499779038</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Auto Create Proxy">
+      <created>1510676615778</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1510676615778</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 10m 20s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.17 at 23h 34m 44s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 15m 47s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.17 at 23h 36m 52s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 16m 57s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.17 at 23h 37m 15s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 17m 23s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.17 at 23h 56m 20s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 19m 31s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.17 at 23h 57m 05s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 20m 20s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.17 at 23h 58m 04s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 20m 53s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.18 at 00h 00m 10s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 21m 34s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 03s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 22m 17s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 25s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.15 at 01h 22m 58s.xml">
-      <configuration name="All in spring_test (1)" configurationId="JUnit" />
+    <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 42s.xml">
+      <configuration name="PointCutTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1261,7 +1277,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3258427" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32474577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1272,7 +1288,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16677967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23320313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15898438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23588924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24953096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1330,7 +1346,8 @@
     <MESSAGE value="ProxyFactoryBean impl" />
     <MESSAGE value="Spring Advisor apply" />
     <MESSAGE value="Pointcut ext" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pointcut ext" />
+    <MESSAGE value="Auto Create Proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auto Create Proxy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1341,25 +1358,11 @@
           <properties />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/CountingConnectionMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/JdbcContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/SimpleConnectionMaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1385,13 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="63" column="6" lean-forward="false" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1434,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,28 +1492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/DaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/TransactionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="30" lean-forward="false" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="64" lean-forward="false" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -1565,7 +1542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="638" column="62" lean-forward="false" selection-start-line="638" selection-start-column="62" selection-end-line="638" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,29 +1562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
-          <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/EachTestNotifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#1299#1300#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1616,7 +1573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2595">
           <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1624,7 +1580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1632,7 +1587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6315">
           <caret line="486" column="0" lean-forward="false" selection-start-line="486" selection-start-column="0" selection-end-line="486" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1640,23 +1594,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2745">
           <caret line="216" column="0" lean-forward="false" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3270">
-          <caret line="242" column="40" lean-forward="false" selection-start-line="242" selection-start-column="40" selection-end-line="242" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/MethodMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
+        <state relative-caret-position="495">
           <caret line="49" column="17" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
           <folding />
         </state>
@@ -1681,7 +1624,7 @@
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/support/NameMatchMethodPointcut.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+          <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1691,14 +1634,14 @@
         <state relative-caret-position="435">
           <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.0.1.RELEASE/760c860ca9374e5d84934a6b5ad505df302e2c46/spring-beans-5.0.1.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="2670">
           <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding />
         </state>
@@ -1706,7 +1649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="210">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1718,7 +1661,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
+        <state relative-caret-position="2190">
           <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding />
         </state>
@@ -1726,29 +1669,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1757,10 +1679,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springbook/proxy/TransactionAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding>
+            <element signature="e#4455#4456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1096">
+          <caret line="328" column="0" lean-forward="false" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/Optional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="144" column="19" lean-forward="false" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
+          <folding>
+            <element signature="e#4242#4243#0" expanded="true" />
+            <element signature="e#4278#4279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="48" lean-forward="false" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/DaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
           </folding>
         </state>
       </provider>
