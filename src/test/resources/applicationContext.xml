@@ -4,7 +4,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
         <property name="driverClass" value="org.sqlite.JDBC"/>
@@ -59,18 +61,23 @@
         <property name="mappedName" value="upgrade*"/>
         <property name="mappedClassName" value="*ServiceImpl"/>
     </bean>
-    -->
-    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+      <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
     <bean id="transactionPointCut" class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
         <property name="expression" value="execution(* *..*ServiceImpl.upgrade*(..))"/>
     </bean>
-    <bean id="transactionAdvice" class="springbook.proxy.TransactionAdvice" >
-        <property name="transactionManager" ref="transactionManager"/>
-    </bean>
-    <bean id="transactionAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <bean id="transactionAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
         <property name="advice" ref="transactionAdvice"/>
         <property name="pointcut" ref="transactionPointCut"/>
     </bean>
+    -->
+    <bean id="transactionAdvice" class="springbook.proxy.TransactionAdvice">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+    <aop:config>
+        <aop:pointcut id="transactionPointCut" expression="execution(* *..*ServiceImpl.upgrade*(..))"></aop:pointcut>
+        <aop:advisor advice-ref="transactionAdvice" pointcut-ref="transactionPointCut"/>
+    </aop:config>
+
     <bean id="userService" class="springbook.user.service.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
         <property name="dataSource" ref="dataSource"/>
