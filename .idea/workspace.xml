@@ -216,7 +216,7 @@
             <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1049">
-                  <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+                  <caret line="90" column="92" lean-forward="false" selection-start-line="90" selection-start-column="92" selection-end-line="90" selection-end-column="92" />
                   <folding />
                 </state>
               </provider>
@@ -1266,7 +1266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510932854299</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="TransactionInterceptor Advice apply">
+      <created>1510933151530</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1510933151530</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1291,8 +1298,8 @@
     <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 00h 38m 40s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 25s.xml">
-      <configuration name="PointCutTest" configurationId="JUnit" />
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 00h 42m 48s.xml">
+      <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 42s.xml">
       <configuration name="PointCutTest" configurationId="JUnit" />
@@ -1388,7 +1395,8 @@
     <MESSAGE value="proxy &amp; transaction learn" />
     <MESSAGE value="AspectJPointCut" />
     <MESSAGE value="enable aop xmlns" />
-    <option name="LAST_COMMIT_MESSAGE" value="enable aop xmlns" />
+    <MESSAGE value="TransactionInterceptor Advice apply" />
+    <option name="LAST_COMMIT_MESSAGE" value="TransactionInterceptor Advice apply" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1816,7 +1824,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1049">
-          <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+          <caret line="90" column="92" lean-forward="false" selection-start-line="90" selection-start-column="92" selection-end-line="90" selection-end-column="92" />
           <folding />
         </state>
       </provider>
