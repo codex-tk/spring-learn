@@ -215,8 +215,8 @@
           <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1139">
-                  <caret line="77" column="50" lean-forward="false" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+                <state relative-caret-position="1049">
+                  <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
                   <folding />
                 </state>
               </provider>
@@ -1259,7 +1259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510932629502</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="enable aop xmlns">
+      <created>1510932854299</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1510932854299</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1278,11 +1285,11 @@
     <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 00h 33m 48s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PointCutTest - 2017.11.18 at 00h 00m 10s.xml">
-      <configuration name="PointCutTest" configurationId="JUnit" />
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 00h 38m 04s.xml">
+      <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 03s.xml">
-      <configuration name="PointCutTest" configurationId="JUnit" />
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 00h 38m 40s.xml">
+      <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PointCutTest - 2017.11.18 at 00h 01m 25s.xml">
       <configuration name="PointCutTest" configurationId="JUnit" />
@@ -1380,7 +1387,8 @@
     <MESSAGE value="Auto Create Proxy" />
     <MESSAGE value="proxy &amp; transaction learn" />
     <MESSAGE value="AspectJPointCut" />
-    <option name="LAST_COMMIT_MESSAGE" value="AspectJPointCut" />
+    <MESSAGE value="enable aop xmlns" />
+    <option name="LAST_COMMIT_MESSAGE" value="enable aop xmlns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1807,8 +1815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="77" column="50" lean-forward="false" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+        <state relative-caret-position="1049">
+          <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
           <folding />
         </state>
       </provider>
