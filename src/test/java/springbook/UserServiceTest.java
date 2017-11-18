@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.dao.TransientDataAccessResourceException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.annotation.DirtiesContext;
@@ -33,7 +34,7 @@ import static org.junit.Assert.*;
 
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "./../applicationContext.xml")
+@ContextConfiguration(classes = TestApplicationContext.class)
 public class UserServiceTest {
     @Autowired
     UserService userService;
@@ -123,6 +124,12 @@ public class UserServiceTest {
             if( user.getId().equals(this.id))
                 throw new TestUserServiceException();
             super.upgradeLevel(user);
+        }
+
+        @Override
+        public List<User> getAll(){
+            super.getAll().forEach(u->super.update(u));
+            return null;
         }
     }
 
@@ -223,6 +230,10 @@ public class UserServiceTest {
 //    }
 
     @Test
+    public void testServiceIsProxy(){
+        assertEquals(testUserService.getClass().getSimpleName().contains("Proxy") , true);
+    }
+    @Test
     public void upgradeAllOrNothing() throws Exception {
         userDao.deleteAll();
         userList.forEach(u->userService.add(u));
@@ -238,5 +249,12 @@ public class UserServiceTest {
                 , Level.GOLD);
 
         IntStream.range(0,5).forEach( i -> assertEquals(userDao.get( userList.get(i).getId()).getLevel() , levels.get(i)));
+    }
+
+    @Test(expected = TransientDataAccessResourceException.class )
+    public void readOnlyTransactionApplyTest(){
+        userDao.deleteAll();
+        userList.forEach(u->userService.add(u));
+        testUserService.getAll();
     }
 }

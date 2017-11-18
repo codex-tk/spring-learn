@@ -25,7 +25,7 @@ import static org.junit.Assert.assertEquals;
 
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "./../applicationContext.xml")
+@ContextConfiguration(classes = TestApplicationContext.class)
 public class UserDaoTest {
 
     @Autowired ApplicationContext context;

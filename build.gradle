@@ -40,6 +40,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework/spring-aspects
     compile group: 'org.springframework', name: 'spring-aspects', version: '5.0.1.RELEASE'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
 
 
 }

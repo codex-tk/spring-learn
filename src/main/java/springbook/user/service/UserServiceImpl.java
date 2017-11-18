@@ -12,6 +12,7 @@ import springbook.user.domain.User;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.List;
 
 @Data
 public class UserServiceImpl implements UserService {
@@ -58,5 +59,13 @@ public class UserServiceImpl implements UserService {
     public void add(User user){
         if ( user.getLevel() == null ) user.setLevel(Level.BASIC);
         userDao.add(user);
+    }
+
+    public List<User> getAll(){
+        return userDao.getAll();
+    }
+
+    public void update(User u) {
+        userDao.update(u);
     }
 }
