@@ -1,15 +1,19 @@
 package springbook.user.dao;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 import springbook.user.domain.Level;
 import springbook.user.domain.User;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 
 @Data
+@Component("userDao")
 public class UserDaoJdbc implements UserDao {
 
     JdbcTemplate jdbcTemplate;
@@ -62,6 +66,11 @@ public class UserDaoJdbc implements UserDao {
                 , user.getName(),user.getPassword()
                 , user.getLevel().getValue() , user.getLogin() , user.getRecommend()
                 , user.getId() );
+    }
+
+    @Autowired
+    public void setDataSource(DataSource dataSource){
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
 }

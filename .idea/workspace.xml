@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1776fd1d-edb0-4cb9-a28e-6577f3196e49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__mysql_mysql_connector_java_6_0_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/springbook/MysqlTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/spring_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/spring_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/spring_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/spring_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java" afterPath="$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -54,14 +48,14 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48536927">
+    <splitter split-orientation="horizontal" split-proportion="0.53560174">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="UserServiceTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+                <state relative-caret-position="267">
+                  <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -69,37 +63,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TestApplicationContext.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java">
+          <file leaf-file-name="UserTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="JdkDynamicAopProxy.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2745">
-                  <caret line="216" column="0" lean-forward="false" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+                <state relative-caret-position="285">
+                  <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AopUtils.java" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.1.RELEASE/98c057886647b4ceab737bcc39c006a38d239e63/spring-aop-5.0.1.RELEASE-sources.jar!/org/springframework/aop/support/AopUtils.java">
+          <file leaf-file-name="TestApplicationContext.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1770">
-                  <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+                <state relative-caret-position="840">
+                  <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
                   <folding>
-                    <element signature="e#5995#5996#0" expanded="true" />
-                    <element signature="e#6047#6048#0" expanded="true" />
-                    <element signature="e#6277#6278#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#2112#2113#0" expanded="true" />
+                    <element signature="e#2156#2157#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#1933#1934#0" expanded="true" />
+                    <element signature="e#1972#1973#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -108,8 +103,8 @@
           <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="20" />
+                <state relative-caret-position="195">
+                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -118,9 +113,12 @@
           <file leaf-file-name="UserDaoJdbc.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-                  <folding />
+                <state relative-caret-position="675">
+                  <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#2410#2411#0" expanded="true" />
+                    <element signature="e#2474#2475#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -128,8 +126,8 @@
           <file leaf-file-name="UserDaoTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="91">
-                  <caret line="88" column="37" lean-forward="true" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
+                <state relative-caret-position="304">
+                  <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -161,7 +159,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MysqlTest.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="MysqlTest.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/java/springbook/MysqlTest.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
@@ -197,7 +195,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TestUserServiceException.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TestUserServiceException.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestUserServiceException.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="60">
@@ -207,11 +205,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+                <state relative-caret-position="570">
+                  <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -254,8 +252,8 @@
           <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+                <state relative-caret-position="195">
+                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -691,7 +689,6 @@
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/dao/olds/StatementStrategy.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java" />
         <option value="$PROJECT_DIR$/src/main/java/springbook/user/domain/Level.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/TestUserServiceException.java" />
@@ -708,21 +705,23 @@
         <option value="$PROJECT_DIR$/src/main/java/springbook/proxy/NameMatchClassMethodPointcut.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/codex/ProxyTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/springbook/MysqlTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java" />
-        <option value="$PROJECT_DIR$/src/test/java/springbook/MysqlTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="width" value="2116" />
-    <option name="height" value="1577" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="557" />
+    <option name="y" value="223" />
+    <option name="width" value="2010" />
+    <option name="height" value="1354" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -1290,38 +1289,45 @@
       <option name="project" value="LOCAL" />
       <updated>1510933388699</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="xml -&gt; @Configuration ..">
+      <created>1510983355831</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1510983355831</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 12m 08s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 56m 11s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 12m 47s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 57m 39s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 16m 00s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 59m 59s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 20m 17s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 27m 27s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 20m 29s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 32m 47s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 20m 43s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 34m 46s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 21m 09s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 35m 18s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 22m 03s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 36m 39s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 23m 39s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 37m 33s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 14h 26m 21s.xml">
+    <history-entry file="All_in_spring_test_(1) - 2017.11.18 at 22h 38m 14s.xml">
       <configuration name="All in spring_test (1)" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1335,7 +1341,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1586" extended-state="6" />
+    <frame x="557" y="223" width="2010" height="1354" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296371" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1345,12 +1351,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34305084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26847458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26870474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26950926" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16677967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15898438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20411234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23588924" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24953096" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1414,7 +1420,8 @@
     <MESSAGE value="enable aop xmlns" />
     <MESSAGE value="TransactionInterceptor Advice apply" />
     <MESSAGE value="xmlns tx apply" />
-    <option name="LAST_COMMIT_MESSAGE" value="xmlns tx apply" />
+    <MESSAGE value="xml -&gt; @Configuration .." />
+    <option name="LAST_COMMIT_MESSAGE" value="xml -&gt; @Configuration .." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1423,12 +1430,6 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/3.1.0.RELEASE/818fa065377869b3d4d045d9c1804a2166bad0c8/spring-jdbc-3.1.0.RELEASE-sources.jar!/org/springframework/jdbc/core/JdbcTemplate.java</url>
           <line>849</line>
           <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java</url>
-          <line>257</line>
-          <properties />
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="19" />
@@ -1441,16 +1442,6 @@
         <state relative-caret-position="390">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1677,36 +1668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestUserServiceException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1761#1762#0" expanded="false" />
-            <element signature="e#1800#1801#0" expanded="false" />
-            <element signature="e#1834#1835#0" expanded="false" />
-            <element signature="e#1867#1868#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13275">
@@ -1727,9 +1688,9 @@
         <state relative-caret-position="1770">
           <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
-            <element signature="e#5995#5996#0" expanded="true" />
-            <element signature="e#6047#6048#0" expanded="true" />
-            <element signature="e#6277#6278#0" expanded="true" />
+            <element signature="e#5995#5996#0" expanded="false" />
+            <element signature="e#6047#6048#0" expanded="false" />
+            <element signature="e#6277#6278#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1758,22 +1719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/springbook/PointCutTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1796,47 +1741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="88" column="37" lean-forward="true" selection-start-line="88" selection-start-column="37" selection-end-line="88" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="60" lean-forward="false" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/springbook/Sqlit3Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1850,6 +1754,103 @@
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/dao/UserDaoJdbc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="e#2410#2411#0" expanded="true" />
+            <element signature="e#2474#2475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/springbook/user/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1972#1973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestUserServiceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/springbook/TestApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2156#2157#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

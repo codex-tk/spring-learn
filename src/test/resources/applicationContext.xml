@@ -10,31 +10,39 @@
             http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
             http://www.springframework.org/schema/tx
             http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
-
+    <!--
+    <property name="driverClass" value="org.sqlite.JDBC"/>
+    <property name="url" value="jdbc:sqlite:./sample.db"/>
+    -->
+    <bean id="jdbcContext" class="springbook.user.dao.olds.JdbcContext">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <!--
-        <property name="driverClass" value="org.sqlite.JDBC"/>
-        <property name="url" value="jdbc:sqlite:./sample.db"/>
-        -->
+
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://192.168.1.10:3306/spring"/>
         <property name="username" value="spring"/>
         <property name="password" value="spring"/>
     </bean>
-    <bean id="jdbcContext" class="springbook.user.dao.olds.JdbcContext">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
+
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
+
+
     <bean id="userDao" class="springbook.user.dao.UserDaoJdbc">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+
+        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="mailSender" class="springbook.user.service.DummyMailSender">
     </bean>
+    -->
+
+
     <!--
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="mail.server.com"/>
@@ -86,7 +94,7 @@
         <property name="transactionAttributes">
             <props>
                 <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
-                <prop key="upgrade*">PROPAGATION_REQUIRES_NEW,ISOLATION_SERIALIZABLE</prop>
+                <prop key="upgrade*">EPROPAGATION_REQUIRES_NEW,ISOLATION_SERIALIZABL</prop>
             </props>
         </property>
     </bean>
@@ -99,10 +107,10 @@
     </property>
     </bean>
     -->
-    <!-- db 변경해볼것-->
+    <!-- db 변경해볼것 - mysql 에서 동작 확인-->
     <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="getAll" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
             <tx:method name="upgrade*" propagation="REQUIRES_NEW" isolation="SERIALIZABLE"/>
         </tx:attributes>
     </tx:advice>
@@ -112,7 +120,7 @@
         <aop:advisor advice-ref="transactionAdvice" pointcut="bean(*Service)"/>
     </aop:config>
 
-
+<!--
     <bean id="userService" class="springbook.user.service.UserServiceImpl">
         <property name="userDao" ref="userDao"/>
         <property name="dataSource" ref="dataSource"/>
@@ -121,4 +129,5 @@
     <bean id="testUserService" class="springbook.UserServiceTest$TestUserServiceImpl" parent="userService">
         <constructor-arg name="id" value="4"/>
     </bean>
+    -->
 </beans>
